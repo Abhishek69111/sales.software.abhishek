@@ -1,0 +1,2401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Visit Tracker Pro</title>
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Sales Tracker">
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIlNhbGVzIFZpc2l0IFRyYWNrZXIgUHJvIiwKICAic2hvcnRfbmFtZSI6ICJTYWxlcyBUcmFja2VyIiwKICAiZGVzY3JpcHRpb24iOiAiTXVsdGktVXNlciBTYWxlcyBUZWFtIFRyYWNrZXIgd2l0aCBSZWFsLVRpbWUgU3luYyIsCiAgInN0YXJ0X3VybCI6ICIvIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjNjY3ZWVhIiwKICAidGhlbWVfY29sb3IiOiAiIzY2N2VlYSIsCiAgIm9yaWVudGF0aW9uIjogInBvcnRyYWl0IiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCM2FXUjBhRDBpTVRJNElpQm9aV2xuYUhROUlqRXlPQ0lnZG1sbGQwSnZlRDBpTUNBd0lERXlPQ0F4TWpnaUlIaHRiRzV6UFNKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eU1EQXdMM04yWnlJK1BHUmxabk0rUEdkcFlXUnBaVzUwSUdsa1BTSmhJaUJqZUQwaU5qUWxJaUJqZVQwaU5qUWxJaUJ5UFNJeU5DVWlQanh6ZEc5d0lHOW1abk5sZEQwaU1DVWlJSE4wYjNBdFkyOXNiM0k5SWlNMk5qZGxaV0VpTHo0OGMzUnZjQ0J2Wm1aelpYUTlJakV3TUNVaUlITjBiM0F0WTI5c2IzSTlJaU0zTmpSaVlUSWlMejQ4TDJkeVlXUnBaVzUwUGp3dmJHVm1jejQ4Y21WamRDQjNhV1IwYUQwaU1USTRJaUJvWldsbmFIUTlJakV5T0NJZ1ptbHNiRDBpZFhKc0tDTmhLU0l2UGp4MFpYaDBJSGc5SWpZMElpQjVQU0kyTkNJZ1ptbHNiRDBpSTJabVptWm1aaUlnWm05dWRDMW1ZVzFwYkhrOUlrRnlhV0ZzTENCemFXNXpMWE5sY21sbUlpQm1iMjUwTFhOcGVtVTlJakU0SWlCMFpYaDBMV0Z1WTJodmNqMGliV2xrWkd4bElpNVRQQzlwUGp3dmRHVjRkRDQ4TDNOMlp6ND0iLAogICAgICAic2l6ZXMiOiAiMTI4eDEyOCIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiCiAgICB9LAogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjNhV1IwYUQwaU5URXlJaUJvWldsbmFIUTlJalV4TWlJZ2RtbGxkMEp2ZUQwaU1DQXdJRFV4TWlBMU1USWlJSGh0Ykc1elBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStQR1JsWm5NK1BHZHlZV1JwWlc1MElHbGtQU0poSWlCamVEMGlOalFsSWlCamVUMGlOalFsSWlCeVBTSTBNQ1VpUGp4emRHOXdJRzltWm5ObGREMGlNQ1VpSUhOMGIzQXRZMjlzYjNJOUlpTTJOamRsWldFaUx6NDhjM1J2Y0NCdlptWnpaWFE5SWpFd01DVWlJSE4wYjNBdFkyOXNiM0k5SWlNM05qUmlZVElpTHo0OEwyZHlZV1JwWlc1MFBqd3ZaR1ZtY3o0OGNtVmpkQ0IzYVdSMGFEMGlOVEV5SWlCb1pXbG5hSFE5SWpVeE1pSWdabWxzYkQwaWRYSnNLQ05oS1NJdlBqeDBaWGgwSUhnOUlqSTFOaUlnZVQwaU1qVTJJaUJtYVd4c1BTSWpabVptWm1abUlpQm1iMjUwTFdaaGJXbHNlVDBpUVhKcFlXd3NJSE5wYm5NdGMyVnlhV1lpSUdadmJuUXRjMmw2WlQwaU5EZ2lJSFJsZUhRdFlXNWphRzl5UFNKdGFXUmtiR1VpUGxNOEwybCtQQzkwWlhoMFBqd3ZjM1puUGc9PSIsCiAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwKIAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiCiAgICB9CiAgXQp9">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGdyYWRpZW50IGlkPSJhIiBjeD0iNjQlIiBjeT0iNjQlIiByPSI2NCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM2NjdlZWEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3NjRiYTIiLz48L2dyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgZmlsbD0idXJsKCNhKSIvPjx0ZXh0IHg9IjY0IiB5PSI2NCIgZmlsbD0iI2ZmZmZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5TPC9pPjwvdGV4dD48L3N2Zz4=">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <div class="container mx-auto px-3 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-8 max-w-7xl">
+        <!-- Header -->
+        <div class="text-center mb-6 sm:mb-8">
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2">Sales Visit Tracker Pro</h1>
+            <p class="text-white/80 text-sm sm:text-base lg:text-lg px-4">Multi-User Team Tracker - Sync Data Across All Devices</p>
+            
+            <!-- Sync Status -->
+            <div class="mt-4 flex justify-center">
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2 flex items-center gap-3">
+                    <div id="syncStatus" class="flex items-center gap-2">
+                        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span class="text-white text-xs sm:text-sm">Auto-Sync Active</span>
+                    </div>
+                    <button id="manualSyncBtn" class="bg-white/30 hover:bg-white/40 text-white px-3 py-1 rounded text-xs transition-colors">
+                        🔄 Sync Now
+                    </button>
+                    <span id="lastSyncTime" class="text-white/70 text-xs">
+                        Last sync: Never
+                    </span>
+                </div>
+            </div>
+
+            <!-- PWA Install Button -->
+            <div id="installPrompt" class="mt-4 flex justify-center hidden">
+                <button id="installBtn" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
+                    📱 Install App on Phone
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="flex justify-center mb-6 sm:mb-8">
+            <div class="bg-white/20 backdrop-blur-sm rounded-lg p-1 w-full max-w-md sm:max-w-lg">
+                <div class="grid grid-cols-4 gap-1">
+                    <button id="setupTab" class="px-2 sm:px-4 py-2 sm:py-3 rounded-md text-white font-medium transition-all duration-300 bg-white/30 text-xs sm:text-sm">
+                        Team Setup
+                    </button>
+                    <button id="addVisitTab" class="px-2 sm:px-4 py-2 sm:py-3 rounded-md text-white font-medium transition-all duration-300 hover:bg-white/20 text-xs sm:text-sm">
+                        Add Visit
+                    </button>
+                    <button id="viewDataTab" class="px-2 sm:px-4 py-2 sm:py-3 rounded-md text-white font-medium transition-all duration-300 hover:bg-white/20 text-xs sm:text-sm">
+                        View Data
+                    </button>
+                    <button id="adminTab" class="px-2 sm:px-4 py-2 sm:py-3 rounded-md text-white font-medium transition-all duration-300 hover:bg-white/20 text-xs sm:text-sm">
+                        Admin Panel
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Setup Section -->
+        <div id="setupSection" class="animate-fade-in">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl sm:rounded-2xl card-shadow p-4 sm:p-6 lg:p-8">
+                <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 text-center">Team Setup & Sync Configuration</h2>
+                
+                <!-- Team ID Setup -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 sm:p-6 mb-6">
+                    <h3 class="text-lg font-semibold text-blue-800 mb-4">🏢 Team Configuration</h3>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Team ID (Share this with your team)</label>
+                            <div class="flex gap-2">
+                                <input type="text" id="teamId" readonly
+                                       class="flex-1 px-3 py-2 border border-gray-300 rounded-lg bg-gray-50 text-gray-600 text-sm"
+                                       placeholder="Click 'Generate Team ID' to create">
+                                <button id="generateTeamId" 
+                                        class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm whitespace-nowrap">
+                                    Generate Team ID
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Join Existing Team</label>
+                            <div class="flex gap-2">
+                                <input type="text" id="joinTeamId" 
+                                       class="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                                       placeholder="Enter Team ID to join">
+                                <button id="joinTeamBtn" 
+                                        class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm whitespace-nowrap">
+                                    Join Team
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-4 border">
+                        <h4 class="font-medium text-gray-800 mb-2">Current Team Status:</h4>
+                        <div id="teamStatus" class="text-sm text-gray-600">
+                            No team configured. Generate a Team ID or join an existing team.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sync Settings -->
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4 sm:p-6 mb-6">
+                    <h3 class="text-lg font-semibold text-green-800 mb-4">🔄 Sync Settings</h3>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Auto-Sync Interval</label>
+                            <select id="syncInterval" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                                <option value="30">Every 30 seconds</option>
+                                <option value="60" selected>Every 1 minute</option>
+                                <option value="300">Every 5 minutes</option>
+                                <option value="600">Every 10 minutes</option>
+                                <option value="0">Manual sync only</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Sync Status</label>
+                            <div class="flex items-center gap-2 px-3 py-2 bg-white border border-gray-300 rounded-lg">
+                                <div id="syncIndicator" class="w-3 h-3 bg-gray-400 rounded-full"></div>
+                                <span id="syncStatusText" class="text-sm text-gray-600">Not configured</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instructions -->
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 sm:p-6">
+                    <h3 class="text-lg font-semibold text-yellow-800 mb-4">📋 How to Setup Multi-User Sync</h3>
+                    
+                    <div class="space-y-3 text-sm text-gray-700">
+                        <div class="flex items-start gap-3">
+                            <span class="bg-yellow-200 text-yellow-800 px-2 py-1 rounded text-xs font-medium">1</span>
+                            <div>
+                                <strong>Team Leader:</strong> Click "Generate Team ID" to create a unique team identifier. Share this ID with all team members.
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <span class="bg-yellow-200 text-yellow-800 px-2 py-1 rounded text-xs font-medium">2</span>
+                            <div>
+                                <strong>Team Members:</strong> Enter the Team ID in "Join Existing Team" field and click "Join Team".
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <span class="bg-yellow-200 text-yellow-800 px-2 py-1 rounded text-xs font-medium">3</span>
+                            <div>
+                                <strong>All Users:</strong> Data will automatically sync across all devices. Visit records from all team members will appear in everyone's "View Data" section.
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <span class="bg-yellow-200 text-yellow-800 px-2 py-1 rounded text-xs font-medium">4</span>
+                            <div>
+                                <strong>Internet Required:</strong> All devices must have internet connection for sync to work. Data is stored locally and synced when online.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Visit Form -->
+        <div id="addVisitSection" class="hidden animate-fade-in">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl sm:rounded-2xl card-shadow p-4 sm:p-6 lg:p-8">
+                <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 text-center">Log Shop Visit</h2>
+                
+                <form id="visitForm" class="space-y-4 sm:space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Sales Person Name</label>
+                            <input type="text" id="salesPersonName" required 
+                                   class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                                   placeholder="Enter your name">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Visit Date</label>
+                            <input type="date" id="visitDate" required 
+                                   class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Shop Name</label>
+                            <input type="text" id="shopName" required 
+                                   class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                                   placeholder="Enter shop name">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Shop Owner</label>
+                            <input type="text" id="shopOwner" required 
+                                   class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                                   placeholder="Enter owner name">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Shop Type</label>
+                            <input type="text" id="shopType" required 
+                                   class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                                   placeholder="Enter shop type (e.g., Grocery Store, Medical Store, etc.)">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Location</label>
+                            <div class="space-y-2">
+                                <div class="flex gap-2">
+                                    <input type="text" id="currentLocation" readonly
+                                           class="flex-1 px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-600 text-xs sm:text-sm"
+                                           placeholder="Click 'Get Location' to capture GPS coordinates">
+                                    <button type="button" id="getLocationBtn" 
+                                            class="px-2 sm:px-4 py-2 sm:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors whitespace-nowrap text-xs sm:text-sm">
+                                        📍 Get Location
+                                    </button>
+                                </div>
+                                <div class="flex gap-2">
+                                    <button type="button" id="testLocationBtn" 
+                                            class="flex-1 px-2 sm:px-3 py-2 bg-green-600 text-white text-xs sm:text-sm rounded-lg hover:bg-green-700 transition-colors">
+                                        🧪 Test Location
+                                    </button>
+                                    <button type="button" id="viewMapBtn" 
+                                            class="flex-1 px-2 sm:px-3 py-2 bg-purple-600 text-white text-xs sm:text-sm rounded-lg hover:bg-purple-700 transition-colors disabled:bg-gray-400" disabled>
+                                        🗺️ View on Map
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Contact Number</label>
+                            <input type="tel" id="contactNumber" required 
+                                   class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                                   placeholder="Enter phone number">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Visit Time</label>
+                            <input type="time" id="visitTime" required 
+                                   class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Shop Address</label>
+                        <textarea id="shopAddress" required rows="3"
+                                  class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                                  placeholder="Enter complete shop address"></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Products Discussed</label>
+                            <input type="text" id="productsDiscussed" 
+                                   class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                                   placeholder="List products discussed">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Order Amount (₹)</label>
+                            <input type="number" id="orderAmount" min="0" step="0.01"
+                                   class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                                   placeholder="Enter order amount">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Visit Notes</label>
+                        <textarea id="visitNotes" rows="4"
+                                  class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                                  placeholder="Add any additional notes about the visit..."></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Next Follow-up Date</label>
+                        <input type="date" id="followupDate" 
+                               class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base">
+                    </div>
+
+                    <!-- Photo Capture Section -->
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 sm:p-6">
+                        <h3 class="text-lg font-semibold text-blue-800 mb-4">📸 Visit Photos (Required)</h3>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                            <!-- Selfie with Shop -->
+                            <div class="bg-white rounded-lg p-4 border">
+                                <h4 class="font-medium text-gray-800 mb-3">🤳 Selfie with Shop</h4>
+                                <div class="space-y-3">
+                                    <div class="flex gap-2">
+                                        <button type="button" id="takeSelfieBtn" 
+                                                class="flex-1 bg-green-600 text-white py-2 px-3 rounded-lg hover:bg-green-700 transition-colors text-sm">
+                                            📷 Take Selfie
+                                        </button>
+                                        <button type="button" id="uploadSelfieBtn" 
+                                                class="flex-1 bg-blue-600 text-white py-2 px-3 rounded-lg hover:bg-blue-700 transition-colors text-sm">
+                                            📁 Upload Photo
+                                        </button>
+                                    </div>
+                                    <div id="selfiePreview" class="hidden">
+                                        <img id="selfieImage" class="w-full h-32 object-cover rounded-lg border">
+                                        <button type="button" id="retakeSelfieBtn" 
+                                                class="w-full mt-2 bg-orange-500 text-white py-1 px-2 rounded text-xs hover:bg-orange-600 transition-colors">
+                                            🔄 Retake Selfie
+                                        </button>
+                                    </div>
+                                    <div id="selfieStatus" class="text-sm text-gray-600">
+                                        No selfie captured yet
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Shop Photo -->
+                            <div class="bg-white rounded-lg p-4 border">
+                                <h4 class="font-medium text-gray-800 mb-3">🏪 Shop Photo</h4>
+                                <div class="space-y-3">
+                                    <div class="flex gap-2">
+                                        <button type="button" id="takeShopPhotoBtn" 
+                                                class="flex-1 bg-green-600 text-white py-2 px-3 rounded-lg hover:bg-green-700 transition-colors text-sm">
+                                            📷 Take Photo
+                                        </button>
+                                        <button type="button" id="uploadShopPhotoBtn" 
+                                                class="flex-1 bg-blue-600 text-white py-2 px-3 rounded-lg hover:bg-blue-700 transition-colors text-sm">
+                                            📁 Upload Photo
+                                        </button>
+                                    </div>
+                                    <div id="shopPhotoPreview" class="hidden">
+                                        <img id="shopPhotoImage" class="w-full h-32 object-cover rounded-lg border">
+                                        <button type="button" id="retakeShopPhotoBtn" 
+                                                class="w-full mt-2 bg-orange-500 text-white py-1 px-2 rounded text-xs hover:bg-orange-600 transition-colors">
+                                            🔄 Retake Photo
+                                        </button>
+                                    </div>
+                                    <div id="shopPhotoStatus" class="text-sm text-gray-600">
+                                        No shop photo captured yet
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Photo Instructions -->
+                        <div class="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+                            <p class="text-sm text-yellow-800">
+                                <strong>📋 Photo Requirements:</strong><br>
+                                • <strong>Selfie:</strong> Take a selfie with the shop visible in background<br>
+                                • <strong>Shop Photo:</strong> Clear photo of the shop front/signboard<br>
+                                • Both photos are required to complete the visit log<br>
+                                • Photos are compressed and stored securely with your visit data
+                            </p>
+                        </div>
+                    </div>
+
+                    <button type="submit" 
+                            class="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold py-3 sm:py-4 px-4 sm:px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-lg text-sm sm:text-base">
+                        Save Visit Record
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- View Data Section -->
+        <div id="viewDataSection" class="hidden animate-fade-in">
+            <div class="max-w-7xl mx-auto bg-white rounded-xl sm:rounded-2xl card-shadow p-4 sm:p-6 lg:p-8">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 sm:mb-6 gap-4">
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800">Visit Records</h2>
+                    <div class="flex flex-col sm:flex-row gap-2 sm:gap-4">
+                        <select id="filterSalesPerson" class="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 text-sm">
+                            <option value="">All Sales Persons</option>
+                        </select>
+                        <input type="date" id="filterDate" class="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 text-sm">
+                    </div>
+                </div>
+                
+                <div class="overflow-x-auto -mx-4 sm:mx-0">
+                    <div class="min-w-full inline-block align-middle">
+                        <table class="w-full border-collapse border border-gray-300 text-xs sm:text-sm">
+                            <thead>
+                                <tr class="bg-gray-50">
+                                    <th class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 text-left font-semibold">Date</th>
+                                    <th class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 text-left font-semibold">Sales Person</th>
+                                    <th class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 text-left font-semibold">Shop Name</th>
+                                    <th class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 text-left font-semibold hidden sm:table-cell">Shop Type</th>
+                                    <th class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 text-left font-semibold hidden md:table-cell">Owner</th>
+                                    <th class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 text-left font-semibold hidden lg:table-cell">Contact</th>
+                                    <th class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 text-left font-semibold hidden sm:table-cell">Time</th>
+                                    <th class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 text-left font-semibold">Order Amount</th>
+                                    <th class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 text-left font-semibold hidden lg:table-cell">Selfie</th>
+                                    <th class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 text-left font-semibold">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="visitTableBody">
+                                <!-- Data will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div id="noDataMessage" class="text-center py-8 text-gray-500 hidden">
+                    No visit records found. Start by adding some visits!
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Panel -->
+        <div id="adminSection" class="hidden animate-fade-in">
+            <div class="max-w-6xl mx-auto bg-white rounded-xl sm:rounded-2xl card-shadow p-4 sm:p-6 lg:p-8">
+                <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 text-center">Admin Dashboard</h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4 sm:p-6 rounded-lg text-center">
+                        <h3 class="text-sm sm:text-lg font-semibold mb-2">Total Visits</h3>
+                        <p id="totalVisits" class="text-2xl sm:text-3xl font-bold">0</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-green-500 to-green-600 text-white p-4 sm:p-6 rounded-lg text-center">
+                        <h3 class="text-sm sm:text-lg font-semibold mb-2">Active Sales Persons</h3>
+                        <p id="activeSalesPersons" class="text-2xl sm:text-3xl font-bold">0</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-purple-500 to-purple-600 text-white p-4 sm:p-6 rounded-lg text-center">
+                        <h3 class="text-sm sm:text-lg font-semibold mb-2">Total Orders (₹)</h3>
+                        <p id="totalOrders" class="text-2xl sm:text-3xl font-bold">0</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
+                    <button id="downloadAllData" 
+                            class="bg-gradient-to-r from-green-600 to-green-700 text-white font-bold py-2 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-green-700 hover:to-green-800 transform hover:scale-105 transition-all duration-300 shadow-lg text-xs sm:text-sm">
+                        📊 Download All Data
+                    </button>
+                    
+                    <button id="downloadByPerson" 
+                            class="bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold py-2 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-300 shadow-lg text-xs sm:text-sm">
+                        👤 By Sales Person
+                    </button>
+                    
+                    <button id="downloadByDate" 
+                            class="bg-gradient-to-r from-purple-600 to-purple-700 text-white font-bold py-2 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-purple-700 hover:to-purple-800 transform hover:scale-105 transition-all duration-300 shadow-lg text-xs sm:text-sm">
+                        📅 By Date Range
+                    </button>
+                    
+                    <button id="clearAllData" 
+                            class="bg-gradient-to-r from-red-600 to-red-700 text-white font-bold py-2 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-red-700 hover:to-red-800 transform hover:scale-105 transition-all duration-300 shadow-lg text-xs sm:text-sm">
+                        🗑️ Clear All Data
+                    </button>
+                </div>
+
+                <!-- Auto Backup Section -->
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 sm:p-6 mb-6">
+                    <h3 class="text-lg font-semibold text-yellow-800 mb-4">💾 Data Backup & Security</h3>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-4">
+                        <button id="createBackup" 
+                                class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 sm:py-3 px-3 sm:px-4 rounded-lg transition-all duration-300 shadow-lg text-xs sm:text-sm">
+                            💾 Create Backup
+                        </button>
+                        
+                        <button id="restoreBackup" 
+                                class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 sm:py-3 px-3 sm:px-4 rounded-lg transition-all duration-300 shadow-lg text-xs sm:text-sm">
+                            📂 Restore Backup
+                        </button>
+                        
+                        <button id="autoBackupToggle" 
+                                class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 sm:py-3 px-3 sm:px-4 rounded-lg transition-all duration-300 shadow-lg text-xs sm:text-sm">
+                            🔄 Auto Backup: OFF
+                        </button>
+                        
+                        <button id="emailBackup" 
+                                class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 sm:py-3 px-3 sm:px-4 rounded-lg transition-all duration-300 shadow-lg text-xs sm:text-sm">
+                            📧 Email Backup
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-4 border">
+                        <h4 class="font-medium text-gray-800 mb-2">Backup Status:</h4>
+                        <div id="backupStatus" class="text-sm text-gray-600">
+                            No backups created yet. Click "Create Backup" to secure your data.
+                        </div>
+                        <div id="lastBackupTime" class="text-xs text-gray-500 mt-1">
+                            Last backup: Never
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                        <p class="text-sm text-red-700">
+                            <strong>⚠️ Important:</strong> Browser storage can be lost! Regular backups are essential for business data.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sales Person Performance -->
+                <div class="mt-6 sm:mt-8">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-4">Sales Person Performance</h3>
+                    <div id="performanceTable" class="overflow-x-auto -mx-4 sm:mx-0">
+                        <div class="min-w-full inline-block align-middle">
+                            <table class="w-full border-collapse border border-gray-300 text-xs sm:text-sm">
+                                <thead>
+                                    <tr class="bg-gray-50">
+                                        <th class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 text-left font-semibold">Sales Person</th>
+                                        <th class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 text-left font-semibold">Total Visits</th>
+                                        <th class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 text-left font-semibold">Total Orders (₹)</th>
+                                        <th class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 text-left font-semibold hidden sm:table-cell">Last Visit</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="performanceTableBody">
+                                    <!-- Performance data will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="fixed top-4 right-4 bg-green-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 text-sm sm:text-base z-50 max-w-xs sm:max-w-sm">
+            Visit record saved successfully!
+        </div>
+    </div>
+
+    <!-- Download Modal -->
+    <div id="downloadModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 max-w-md w-full">
+            <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-4">Download Options</h3>
+            <div id="downloadContent">
+                <!-- Dynamic content based on download type -->
+            </div>
+            <div class="flex gap-3 sm:gap-4 mt-4 sm:mt-6">
+                <button id="confirmDownload" class="flex-1 bg-blue-600 text-white py-2 sm:py-3 px-3 sm:px-4 rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base">
+                    Download
+                </button>
+                <button id="cancelDownload" class="flex-1 bg-gray-300 text-gray-700 py-2 sm:py-3 px-3 sm:px-4 rounded-lg hover:bg-gray-400 transition-colors text-sm sm:text-base">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // PWA Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                const swCode = `
+                    const CACHE_NAME = 'sales-tracker-v1';
+                    const urlsToCache = ['/'];
+                    
+                    self.addEventListener('install', (event) => {
+                        event.waitUntil(
+                            caches.open(CACHE_NAME)
+                                .then((cache) => cache.addAll(urlsToCache))
+                        );
+                    });
+                    
+                    self.addEventListener('fetch', (event) => {
+                        event.respondWith(
+                            caches.match(event.request)
+                                .then((response) => {
+                                    return response || fetch(event.request);
+                                })
+                        );
+                    });
+                `;
+                
+                const blob = new Blob([swCode], { type: 'application/javascript' });
+                const swUrl = URL.createObjectURL(blob);
+                
+                navigator.serviceWorker.register(swUrl)
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+        // PWA Install Prompt
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installPrompt').classList.remove('hidden');
+        });
+
+        // Initialize the application
+        class SalesVisitTracker {
+            constructor() {
+                this.visits = JSON.parse(localStorage.getItem('salesVisits')) || [];
+                this.currentTab = 'setup';
+                this.teamId = localStorage.getItem('teamId') || '';
+                this.syncInterval = parseInt(localStorage.getItem('syncInterval')) || 60;
+                this.syncTimer = null;
+                this.lastSyncTime = localStorage.getItem('lastSyncTime') || null;
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.setCurrentDate();
+                this.setCurrentTime();
+                this.initializeTeamSetup();
+                this.startAutoSync();
+                this.updateDisplay();
+                this.initializeBackupSystem();
+            }
+
+            initializeBackupSystem() {
+                this.updateBackupStatus();
+                
+                // Start auto backup if enabled
+                if (localStorage.getItem('autoBackupEnabled') === 'true') {
+                    this.startAutoBackup();
+                }
+            }
+
+            initializeTeamSetup() {
+                // Load team configuration
+                if (this.teamId) {
+                    document.getElementById('teamId').value = this.teamId;
+                    this.updateTeamStatus();
+                }
+                
+                // Set sync interval
+                document.getElementById('syncInterval').value = this.syncInterval;
+                
+                // Update last sync time
+                if (this.lastSyncTime) {
+                    document.getElementById('lastSyncTime').textContent = `Last sync: ${new Date(this.lastSyncTime).toLocaleTimeString()}`;
+                }
+                
+                this.updateSyncStatus();
+            }
+
+            generateTeamId() {
+                // Generate a unique team ID
+                const timestamp = Date.now().toString(36);
+                const randomStr = Math.random().toString(36).substring(2, 8);
+                const teamId = `TEAM-${timestamp}-${randomStr}`.toUpperCase();
+                
+                this.teamId = teamId;
+                localStorage.setItem('teamId', teamId);
+                
+                document.getElementById('teamId').value = teamId;
+                this.updateTeamStatus();
+                this.startAutoSync();
+                
+                // Copy to clipboard
+                navigator.clipboard.writeText(teamId).then(() => {
+                    alert(`✅ Team ID generated and copied to clipboard!\n\nTeam ID: ${teamId}\n\nShare this ID with your team members so they can join and sync data.`);
+                }).catch(() => {
+                    alert(`✅ Team ID generated!\n\nTeam ID: ${teamId}\n\nPlease share this ID with your team members so they can join and sync data.`);
+                });
+            }
+
+            joinTeam() {
+                const joinTeamId = document.getElementById('joinTeamId').value.trim();
+                
+                if (!joinTeamId) {
+                    alert('❌ Please enter a Team ID to join.');
+                    return;
+                }
+                
+                if (!joinTeamId.startsWith('TEAM-')) {
+                    alert('❌ Invalid Team ID format. Team ID should start with "TEAM-"');
+                    return;
+                }
+                
+                this.teamId = joinTeamId;
+                localStorage.setItem('teamId', joinTeamId);
+                
+                document.getElementById('teamId').value = joinTeamId;
+                document.getElementById('joinTeamId').value = '';
+                
+                this.updateTeamStatus();
+                this.startAutoSync();
+                this.syncData(); // Immediate sync when joining
+                
+                alert(`✅ Successfully joined team!\n\nTeam ID: ${joinTeamId}\n\nYour data will now sync with other team members.`);
+            }
+
+            updateTeamStatus() {
+                const statusDiv = document.getElementById('teamStatus');
+                if (this.teamId) {
+                    statusDiv.innerHTML = `
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span class="font-medium text-green-700">Connected to Team: ${this.teamId}</span>
+                        </div>
+                        <div class="text-xs text-gray-500 mt-1">Data syncing with team members</div>
+                    `;
+                } else {
+                    statusDiv.innerHTML = `
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                            <span class="text-gray-600">No team configured</span>
+                        </div>
+                    `;
+                }
+            }
+
+            updateSyncInterval(interval) {
+                this.syncInterval = parseInt(interval);
+                localStorage.setItem('syncInterval', this.syncInterval);
+                this.startAutoSync();
+                this.updateSyncStatus();
+            }
+
+            updateSyncStatus() {
+                const indicator = document.getElementById('syncIndicator');
+                const statusText = document.getElementById('syncStatusText');
+                const headerStatus = document.getElementById('syncStatus');
+                
+                if (!this.teamId) {
+                    indicator.className = 'w-3 h-3 bg-gray-400 rounded-full';
+                    statusText.textContent = 'No team configured';
+                    headerStatus.innerHTML = `
+                        <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                        <span class="text-white text-xs sm:text-sm">Not Connected</span>
+                    `;
+                } else if (this.syncInterval === 0) {
+                    indicator.className = 'w-3 h-3 bg-yellow-500 rounded-full';
+                    statusText.textContent = 'Manual sync only';
+                    headerStatus.innerHTML = `
+                        <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                        <span class="text-white text-xs sm:text-sm">Manual Sync</span>
+                    `;
+                } else {
+                    indicator.className = 'w-3 h-3 bg-green-500 rounded-full animate-pulse';
+                    statusText.textContent = `Auto-sync every ${this.syncInterval < 60 ? this.syncInterval + 's' : Math.floor(this.syncInterval/60) + 'm'}`;
+                    headerStatus.innerHTML = `
+                        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span class="text-white text-xs sm:text-sm">Auto-Sync Active</span>
+                    `;
+                }
+            }
+
+            startAutoSync() {
+                // Clear existing timer
+                if (this.syncTimer) {
+                    clearInterval(this.syncTimer);
+                    this.syncTimer = null;
+                }
+                
+                // Start new timer if interval is set and team is configured
+                if (this.syncInterval > 0 && this.teamId) {
+                    this.syncTimer = setInterval(() => {
+                        this.syncData();
+                    }, this.syncInterval * 1000);
+                }
+                
+                this.updateSyncStatus();
+            }
+
+            async syncData() {
+                if (!this.teamId) return;
+                
+                try {
+                    // Simulate cloud sync using localStorage with team prefix
+                    const teamKey = `team_${this.teamId}_visits`;
+                    const teamData = JSON.parse(localStorage.getItem(teamKey)) || [];
+                    
+                    // Merge local visits with team visits
+                    const mergedVisits = this.mergeVisits(this.visits, teamData);
+                    
+                    // Update both local and team storage
+                    this.visits = mergedVisits;
+                    localStorage.setItem('salesVisits', JSON.stringify(this.visits));
+                    localStorage.setItem(teamKey, JSON.stringify(this.visits));
+                    
+                    // Update last sync time
+                    this.lastSyncTime = new Date().toISOString();
+                    localStorage.setItem('lastSyncTime', this.lastSyncTime);
+                    document.getElementById('lastSyncTime').textContent = `Last sync: ${new Date(this.lastSyncTime).toLocaleTimeString()}`;
+                    
+                    // Update display if on relevant tabs
+                    if (this.currentTab === 'viewData' || this.currentTab === 'admin') {
+                        this.updateDisplay();
+                    }
+                    
+                } catch (error) {
+                    console.error('Sync error:', error);
+                }
+            }
+
+            mergeVisits(localVisits, teamVisits) {
+                // Create a map of existing visits by ID
+                const visitMap = new Map();
+                
+                // Add team visits first
+                teamVisits.forEach(visit => {
+                    visitMap.set(visit.id, visit);
+                });
+                
+                // Add local visits (will overwrite if same ID)
+                localVisits.forEach(visit => {
+                    visitMap.set(visit.id, visit);
+                });
+                
+                // Convert back to array and sort by timestamp
+                return Array.from(visitMap.values()).sort((a, b) => 
+                    new Date(b.timestamp) - new Date(a.timestamp)
+                );
+            }
+
+            manualSync() {
+                const btn = document.getElementById('manualSyncBtn');
+                const originalText = btn.textContent;
+                
+                btn.textContent = '🔄 Syncing...';
+                btn.disabled = true;
+                
+                this.syncData().then(() => {
+                    btn.textContent = '✅ Synced!';
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.disabled = false;
+                    }, 2000);
+                });
+            }
+
+            setupEventListeners() {
+                // Tab navigation
+                document.getElementById('setupTab').addEventListener('click', () => this.switchTab('setup'));
+                document.getElementById('addVisitTab').addEventListener('click', () => this.switchTab('addVisit'));
+                document.getElementById('viewDataTab').addEventListener('click', () => this.switchTab('viewData'));
+                document.getElementById('adminTab').addEventListener('click', () => this.switchTab('admin'));
+
+                // Team setup
+                document.getElementById('generateTeamId').addEventListener('click', () => this.generateTeamId());
+                document.getElementById('joinTeamBtn').addEventListener('click', () => this.joinTeam());
+                document.getElementById('syncInterval').addEventListener('change', (e) => this.updateSyncInterval(e.target.value));
+                document.getElementById('manualSyncBtn').addEventListener('click', () => this.manualSync());
+
+                // Form submission
+                document.getElementById('visitForm').addEventListener('submit', (e) => this.handleFormSubmit(e));
+
+                // Location buttons
+                document.getElementById('getLocationBtn').addEventListener('click', () => this.getCurrentLocation());
+                document.getElementById('testLocationBtn').addEventListener('click', () => this.testLocationFeature());
+                document.getElementById('viewMapBtn').addEventListener('click', () => this.viewLocationOnMap());
+
+                // Photo capture buttons
+                document.getElementById('takeSelfieBtn').addEventListener('click', () => this.takePhoto('selfie'));
+                document.getElementById('uploadSelfieBtn').addEventListener('click', () => this.uploadPhoto('selfie'));
+                document.getElementById('retakeSelfieBtn').addEventListener('click', () => this.retakePhoto('selfie'));
+                document.getElementById('takeShopPhotoBtn').addEventListener('click', () => this.takePhoto('shop'));
+                document.getElementById('uploadShopPhotoBtn').addEventListener('click', () => this.uploadPhoto('shop'));
+                document.getElementById('retakeShopPhotoBtn').addEventListener('click', () => this.retakePhoto('shop'));
+
+                // Filters
+                document.getElementById('filterSalesPerson').addEventListener('change', () => this.updateVisitTable());
+                document.getElementById('filterDate').addEventListener('change', () => this.updateVisitTable());
+
+                // Download buttons
+                document.getElementById('downloadAllData').addEventListener('click', () => this.downloadAllData());
+                document.getElementById('downloadByPerson').addEventListener('click', () => this.showDownloadModal('person'));
+                document.getElementById('downloadByDate').addEventListener('click', () => this.showDownloadModal('date'));
+                document.getElementById('clearAllData').addEventListener('click', () => this.clearAllData());
+
+                // Backup buttons
+                document.getElementById('createBackup').addEventListener('click', () => this.createBackup());
+                document.getElementById('restoreBackup').addEventListener('click', () => this.restoreBackup());
+                document.getElementById('autoBackupToggle').addEventListener('click', () => this.toggleAutoBackup());
+                document.getElementById('emailBackup').addEventListener('click', () => this.emailBackup());
+
+                // Modal buttons
+                document.getElementById('confirmDownload').addEventListener('click', () => this.confirmDownload());
+                document.getElementById('cancelDownload').addEventListener('click', () => this.hideDownloadModal());
+
+                // PWA Install button
+                document.getElementById('installBtn').addEventListener('click', () => this.installPWA());
+            }
+
+            setCurrentDate() {
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById('visitDate').value = today;
+            }
+
+            setCurrentTime() {
+                const now = new Date();
+                const timeString = now.toTimeString().slice(0, 5);
+                document.getElementById('visitTime').value = timeString;
+            }
+
+            getCurrentLocation() {
+                const locationInput = document.getElementById('currentLocation');
+                const locationBtn = document.getElementById('getLocationBtn');
+                
+                // Check if geolocation is supported
+                if (!navigator.geolocation) {
+                    alert('❌ Geolocation is not supported by this browser. Please use a modern browser like Chrome, Firefox, or Safari.');
+                    return;
+                }
+
+                // Update UI to show loading state
+                locationBtn.innerHTML = '⏳ Getting Location...';
+                locationBtn.disabled = true;
+                locationInput.placeholder = 'Requesting location access...';
+                locationInput.value = '';
+
+                // Request location with high accuracy
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const lat = position.coords.latitude;
+                        const lng = position.coords.longitude;
+                        const accuracy = Math.round(position.coords.accuracy);
+                        const timestamp = new Date(position.timestamp).toLocaleTimeString();
+                        
+                        // Display location with Google Maps link
+                        locationInput.value = `${lat.toFixed(6)}, ${lng.toFixed(6)} (±${accuracy}m)`;
+                        locationBtn.innerHTML = '✅ Location Captured';
+                        locationBtn.disabled = false;
+                        
+                        // Show success message
+                        this.showLocationSuccess(`Location captured successfully! Accuracy: ±${accuracy} meters`);
+                        
+                        // Reset button after 3 seconds
+                        setTimeout(() => {
+                            locationBtn.innerHTML = '📍 Get Location';
+                        }, 3000);
+                        
+                        // Store additional location data
+                        locationInput.dataset.latitude = lat;
+                        locationInput.dataset.longitude = lng;
+                        locationInput.dataset.accuracy = accuracy;
+                        locationInput.dataset.timestamp = timestamp;
+                    },
+                    (error) => {
+                        let errorMessage = '';
+                        let solution = '';
+                        
+                        switch(error.code) {
+                            case error.PERMISSION_DENIED:
+                                errorMessage = '❌ Location access denied by user.';
+                                solution = 'Please allow location access in your browser settings and try again.';
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                errorMessage = '❌ Location information unavailable.';
+                                solution = 'Please check your GPS/location services and internet connection.';
+                                break;
+                            case error.TIMEOUT:
+                                errorMessage = '❌ Location request timed out.';
+                                solution = 'Please try again. Make sure you have a good GPS signal.';
+                                break;
+                            default:
+                                errorMessage = '❌ Unknown location error occurred.';
+                                solution = 'Please try again or check your device settings.';
+                                break;
+                        }
+                        
+                        alert(`${errorMessage}\n\n💡 Solution: ${solution}`);
+                        locationInput.placeholder = 'Location not captured - try again';
+                        locationInput.value = '';
+                        locationBtn.innerHTML = '📍 Try Again';
+                        locationBtn.disabled = false;
+                    },
+                    {
+                        enableHighAccuracy: true,    // Use GPS if available
+                        timeout: 15000,              // Wait up to 15 seconds
+                        maximumAge: 30000            // Accept cached location up to 30 seconds old
+                    }
+                );
+            }
+
+            showLocationSuccess(message) {
+                // Create temporary success notification
+                const notification = document.createElement('div');
+                notification.className = 'fixed top-4 left-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 transform -translate-x-full transition-transform duration-300';
+                notification.textContent = message;
+                document.body.appendChild(notification);
+                
+                // Show notification
+                setTimeout(() => {
+                    notification.classList.remove('-translate-x-full');
+                }, 100);
+                
+                // Hide and remove notification
+                setTimeout(() => {
+                    notification.classList.add('-translate-x-full');
+                    setTimeout(() => {
+                        document.body.removeChild(notification);
+                    }, 300);
+                }, 3000);
+
+                // Enable view map button if location is captured
+                const viewMapBtn = document.getElementById('viewMapBtn');
+                viewMapBtn.disabled = false;
+                viewMapBtn.classList.remove('disabled:bg-gray-400');
+            }
+
+            testLocationFeature() {
+                const testBtn = document.getElementById('testLocationBtn');
+                testBtn.innerHTML = '🧪 Testing...';
+                testBtn.disabled = true;
+
+                // Check browser support
+                let testResults = [];
+                
+                if (navigator.geolocation) {
+                    testResults.push('✅ Geolocation API is supported');
+                } else {
+                    testResults.push('❌ Geolocation API is NOT supported');
+                }
+
+                // Check HTTPS
+                if (location.protocol === 'https:' || location.hostname === 'localhost') {
+                    testResults.push('✅ Secure context (HTTPS) - Location access allowed');
+                } else {
+                    testResults.push('⚠️ Non-secure context - Location may be blocked');
+                }
+
+                // Check permissions
+                if (navigator.permissions) {
+                    navigator.permissions.query({name: 'geolocation'}).then((result) => {
+                        if (result.state === 'granted') {
+                            testResults.push('✅ Location permission: GRANTED');
+                        } else if (result.state === 'prompt') {
+                            testResults.push('⚠️ Location permission: Will prompt user');
+                        } else {
+                            testResults.push('❌ Location permission: DENIED');
+                        }
+                        
+                        this.showTestResults(testResults);
+                        testBtn.innerHTML = '🧪 Test Location';
+                        testBtn.disabled = false;
+                    });
+                } else {
+                    testResults.push('⚠️ Cannot check permissions (older browser)');
+                    this.showTestResults(testResults);
+                    testBtn.innerHTML = '🧪 Test Location';
+                    testBtn.disabled = false;
+                }
+            }
+
+            showTestResults(results) {
+                const resultText = `LOCATION FEATURE TEST RESULTS:\n\n${results.join('\n')}\n\n💡 If you see any ❌ or ⚠️, that might explain why location isn't working.`;
+                alert(resultText);
+            }
+
+            viewLocationOnMap() {
+                const locationInput = document.getElementById('currentLocation');
+                const lat = locationInput.dataset.latitude;
+                const lng = locationInput.dataset.longitude;
+
+                if (!lat || !lng) {
+                    alert('❌ No location data available. Please capture location first!');
+                    return;
+                }
+
+                // Open Google Maps with the coordinates
+                const mapsUrl = `https://www.google.com/maps?q=${lat},${lng}&z=18`;
+                window.open(mapsUrl, '_blank');
+            }
+
+            takePhoto(type) {
+                // Check if camera is supported
+                if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                    alert('❌ Camera not supported!\n\nYour browser doesn\'t support camera access. Please use the "Upload Photo" option instead.');
+                    return;
+                }
+
+                // Show loading message
+                const loadingAlert = this.showLoadingMessage('📷 Starting camera...');
+
+                // Try multiple camera configurations in sequence
+                this.tryMultipleCameraConfigs(type, 0, loadingAlert);
+            }
+
+            tryMultipleCameraConfigs(type, configIndex, loadingAlert) {
+                // Different camera configurations to try
+                const cameraConfigs = [
+                    // Config 1: Preferred camera with specific facing mode
+                    {
+                        video: {
+                            width: { ideal: 1280, max: 1920 },
+                            height: { ideal: 720, max: 1080 },
+                            facingMode: type === 'selfie' ? 'user' : 'environment'
+                        }
+                    },
+                    // Config 2: Any camera with good resolution
+                    {
+                        video: {
+                            width: { ideal: 1280 },
+                            height: { ideal: 720 }
+                        }
+                    },
+                    // Config 3: Basic camera with lower resolution
+                    {
+                        video: {
+                            width: { ideal: 640 },
+                            height: { ideal: 480 }
+                        }
+                    },
+                    // Config 4: Minimal constraints
+                    {
+                        video: true
+                    },
+                    // Config 5: Try opposite facing mode
+                    {
+                        video: {
+                            facingMode: type === 'selfie' ? 'environment' : 'user'
+                        }
+                    }
+                ];
+
+                if (configIndex >= cameraConfigs.length) {
+                    this.hideLoadingMessage(loadingAlert);
+                    this.handleCameraError(new Error('All camera configurations failed'));
+                    return;
+                }
+
+                const currentConfig = cameraConfigs[configIndex];
+                
+                // Update loading message
+                this.updateLoadingMessage(loadingAlert, `📷 Trying camera option ${configIndex + 1}/${cameraConfigs.length}...`);
+
+                navigator.mediaDevices.getUserMedia(currentConfig)
+                    .then(stream => {
+                        this.hideLoadingMessage(loadingAlert);
+                        
+                        // Show success message if not the first config
+                        if (configIndex > 0) {
+                            alert(`✅ Camera started successfully!\n\nUsing camera configuration ${configIndex + 1}. If this is not the right camera, you can switch cameras in the camera interface.`);
+                        }
+                        
+                        this.showCameraModal(stream, type, configIndex);
+                    })
+                    .catch(error => {
+                        console.error(`Camera config ${configIndex + 1} failed:`, error);
+                        
+                        // Try next configuration
+                        setTimeout(() => {
+                            this.tryMultipleCameraConfigs(type, configIndex + 1, loadingAlert);
+                        }, 500);
+                    });
+            }
+
+            showLoadingMessage(message) {
+                const loading = document.createElement('div');
+                loading.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+                loading.innerHTML = `
+                    <div class="bg-white rounded-xl p-6 max-w-sm w-full mx-4 text-center">
+                        <div class="animate-spin w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full mx-auto mb-4"></div>
+                        <p id="loadingText" class="text-gray-700">${message}</p>
+                        <button id="cancelLoading" class="mt-4 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors">
+                            Cancel
+                        </button>
+                    </div>
+                `;
+                
+                document.body.appendChild(loading);
+                
+                // Cancel button
+                loading.querySelector('#cancelLoading').addEventListener('click', () => {
+                    this.hideLoadingMessage(loading);
+                });
+                
+                return loading;
+            }
+
+            updateLoadingMessage(loadingElement, message) {
+                const textElement = loadingElement.querySelector('#loadingText');
+                if (textElement) {
+                    textElement.textContent = message;
+                }
+            }
+
+            hideLoadingMessage(loadingElement) {
+                if (loadingElement && loadingElement.parentNode) {
+                    document.body.removeChild(loadingElement);
+                }
+            }
+
+            handleCameraError(error) {
+                console.error('Camera error:', error);
+                let errorMessage = '❌ Camera access failed!\n\n';
+                
+                if (error.name === 'NotAllowedError') {
+                    errorMessage += 'Camera permission denied. Please:\n• Allow camera access in browser settings\n• Refresh the page and try again\n• Or use "Upload Photo" option';
+                } else if (error.name === 'NotFoundError') {
+                    errorMessage += 'No camera found on this device.\n• Please use "Upload Photo" option instead\n• Or try on a device with camera';
+                } else if (error.name === 'OverconstrainedError') {
+                    errorMessage += 'Camera constraints not supported.\n• Your camera doesn\'t support the requested settings\n• Please use "Upload Photo" option';
+                } else {
+                    errorMessage += 'Camera not available.\n• Please check camera permissions\n• Try refreshing the page\n• Or use "Upload Photo" option';
+                }
+                
+                alert(errorMessage);
+            }
+
+            showCameraModal(stream, type, configIndex = 0) {
+                // Create camera modal
+                const modal = document.createElement('div');
+                modal.className = 'fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4';
+                modal.innerHTML = `
+                    <div class="bg-white rounded-xl p-4 max-w-md w-full">
+                        <h3 class="text-lg font-bold text-gray-800 mb-4 text-center">
+                            ${type === 'selfie' ? '🤳 Take Selfie with Shop' : '🏪 Take Shop Photo'}
+                        </h3>
+                        <div class="relative">
+                            <video id="cameraVideo" class="w-full rounded-lg mb-4" autoplay playsinline muted></video>
+                            <div id="videoStatus" class="absolute top-2 left-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-xs">
+                                Loading...
+                            </div>
+                        </div>
+                        <canvas id="photoCanvas" class="hidden"></canvas>
+                        <div class="flex gap-2 mb-3">
+                            <button id="switchCameraBtn" class="flex-1 bg-blue-600 text-white py-2 px-3 rounded-lg hover:bg-blue-700 transition-colors text-sm">
+                                🔄 Switch Camera
+                            </button>
+                            <button id="testCameraBtn" class="flex-1 bg-purple-600 text-white py-2 px-3 rounded-lg hover:bg-purple-700 transition-colors text-sm">
+                                🧪 Test Camera
+                            </button>
+                        </div>
+                        <div class="flex gap-3">
+                            <button id="captureBtn" class="flex-1 bg-green-600 text-white py-3 px-4 rounded-lg hover:bg-green-700 transition-colors">
+                                📷 Capture Photo
+                            </button>
+                            <button id="cancelCameraBtn" class="flex-1 bg-gray-300 text-gray-700 py-3 px-4 rounded-lg hover:bg-gray-400 transition-colors">
+                                Cancel
+                            </button>
+                        </div>
+                        <div class="mt-2 text-xs text-gray-600 text-center">
+                            💡 Point camera at subject and click "Capture Photo" when ready
+                        </div>
+                    </div>
+                `;
+
+                document.body.appendChild(modal);
+
+                const video = modal.querySelector('#cameraVideo');
+                const canvas = modal.querySelector('#photoCanvas');
+                const captureBtn = modal.querySelector('#captureBtn');
+                const cancelBtn = modal.querySelector('#cancelCameraBtn');
+                const switchBtn = modal.querySelector('#switchCameraBtn');
+                const testBtn = modal.querySelector('#testCameraBtn');
+                const statusDiv = modal.querySelector('#videoStatus');
+
+                // Store current stream and type for camera switching
+                modal.currentStream = stream;
+                modal.currentType = type;
+                modal.currentFacingMode = type === 'selfie' ? 'user' : 'environment';
+                modal.configIndex = configIndex;
+
+                // Set video source and handle loading
+                video.srcObject = stream;
+                
+                // Multiple event listeners for better video loading detection
+                video.addEventListener('loadedmetadata', () => {
+                    console.log('Video metadata loaded:', video.videoWidth, 'x', video.videoHeight);
+                    statusDiv.textContent = `${video.videoWidth}x${video.videoHeight} • Loading...`;
+                    statusDiv.className = 'absolute top-2 left-2 bg-yellow-500 text-white px-2 py-1 rounded text-xs';
+                });
+
+                video.addEventListener('loadeddata', () => {
+                    console.log('Video data loaded');
+                    statusDiv.textContent = `${video.videoWidth}x${video.videoHeight} • Almost Ready...`;
+                });
+
+                video.addEventListener('canplay', () => {
+                    console.log('Video can play');
+                    statusDiv.textContent = `${video.videoWidth}x${video.videoHeight} • Ready`;
+                    statusDiv.className = 'absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs';
+                    captureBtn.disabled = false;
+                    captureBtn.style.opacity = '1';
+                    captureBtn.innerHTML = '📷 Capture Photo';
+                });
+
+                video.addEventListener('playing', () => {
+                    console.log('Video is playing');
+                    statusDiv.textContent = `${video.videoWidth}x${video.videoHeight} • Ready`;
+                    statusDiv.className = 'absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs';
+                    captureBtn.disabled = false;
+                    captureBtn.style.opacity = '1';
+                });
+
+                video.addEventListener('error', (e) => {
+                    console.error('Video error:', e);
+                    statusDiv.textContent = 'Video Error - Try Again';
+                    statusDiv.className = 'absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded text-xs';
+                    captureBtn.disabled = true;
+                    captureBtn.style.opacity = '0.5';
+                });
+
+                video.addEventListener('stalled', () => {
+                    console.warn('Video stalled');
+                    statusDiv.textContent = 'Video Stalled - Please Wait';
+                    statusDiv.className = 'absolute top-2 left-2 bg-orange-500 text-white px-2 py-1 rounded text-xs';
+                });
+
+                // Initially disable capture until video loads
+                captureBtn.disabled = true;
+                captureBtn.style.opacity = '0.5';
+                captureBtn.innerHTML = '⏳ Loading Camera...';
+
+                captureBtn.addEventListener('click', () => {
+                    console.log('Capture button clicked, video state:', {
+                        readyState: video.readyState,
+                        videoWidth: video.videoWidth,
+                        videoHeight: video.videoHeight,
+                        currentTime: video.currentTime,
+                        paused: video.paused
+                    });
+                    
+                    // Disable button during capture
+                    captureBtn.disabled = true;
+                    captureBtn.innerHTML = '📸 Capturing...';
+                    
+                    // Check if video is ready
+                    if (video.readyState >= 2 && video.videoWidth > 0 && video.videoHeight > 0) {
+                        this.capturePhotoFromVideo(video, canvas, type);
+                        // Close modal after successful capture
+                        setTimeout(() => {
+                            this.closeCameraModal(modal, modal.currentStream);
+                        }, 500);
+                    } else {
+                        alert('⏳ Camera is still loading!\n\nPlease wait for the video to fully load before capturing. The status indicator should show "Ready".');
+                        // Re-enable button
+                        captureBtn.disabled = false;
+                        captureBtn.innerHTML = '📷 Capture Photo';
+                    }
+                });
+
+                cancelBtn.addEventListener('click', () => {
+                    this.closeCameraModal(modal, modal.currentStream);
+                });
+
+                switchBtn.addEventListener('click', () => {
+                    this.switchCameraInModal(modal, video, statusDiv);
+                });
+
+                testBtn.addEventListener('click', () => {
+                    this.testCameraInModal(modal);
+                });
+
+                // Enable capture button when video is ready
+                video.addEventListener('canplay', () => {
+                    captureBtn.disabled = false;
+                    captureBtn.style.opacity = '1';
+                });
+            }
+
+            async switchCameraInModal(modal, video, statusDiv) {
+                const switchBtn = modal.querySelector('#switchCameraBtn');
+                switchBtn.innerHTML = '🔄 Switching...';
+                switchBtn.disabled = true;
+                statusDiv.textContent = 'Switching camera...';
+                statusDiv.className = 'absolute top-2 left-2 bg-yellow-500 text-white px-2 py-1 rounded text-xs';
+
+                try {
+                    // Stop current stream
+                    modal.currentStream.getTracks().forEach(track => track.stop());
+
+                    // Get list of available cameras
+                    const devices = await navigator.mediaDevices.enumerateDevices();
+                    const videoDevices = devices.filter(device => device.kind === 'videoinput');
+                    
+                    if (videoDevices.length < 2) {
+                        throw new Error('Only one camera available');
+                    }
+
+                    // Try different camera switching strategies
+                    const switchStrategies = [
+                        // Strategy 1: Switch facing mode
+                        {
+                            video: {
+                                facingMode: modal.currentFacingMode === 'user' ? 'environment' : 'user'
+                            }
+                        },
+                        // Strategy 2: Use specific device ID (try next camera)
+                        {
+                            video: {
+                                deviceId: { exact: videoDevices[1].deviceId }
+                            }
+                        },
+                        // Strategy 3: Use first available camera
+                        {
+                            video: {
+                                deviceId: { exact: videoDevices[0].deviceId }
+                            }
+                        },
+                        // Strategy 4: Basic constraints
+                        {
+                            video: true
+                        }
+                    ];
+
+                    let newStream = null;
+                    let successStrategy = -1;
+
+                    for (let i = 0; i < switchStrategies.length; i++) {
+                        try {
+                            newStream = await navigator.mediaDevices.getUserMedia(switchStrategies[i]);
+                            successStrategy = i;
+                            break;
+                        } catch (strategyError) {
+                            console.log(`Switch strategy ${i + 1} failed:`, strategyError);
+                        }
+                    }
+
+                    if (!newStream) {
+                        throw new Error('All switch strategies failed');
+                    }
+
+                    // Update video with new stream
+                    video.srcObject = newStream;
+                    modal.currentStream = newStream;
+                    
+                    // Update facing mode if strategy 1 worked
+                    if (successStrategy === 0) {
+                        modal.currentFacingMode = modal.currentFacingMode === 'user' ? 'environment' : 'user';
+                    }
+                    
+                    switchBtn.innerHTML = '🔄 Switch Camera';
+                    switchBtn.disabled = false;
+                    
+                    statusDiv.textContent = 'Camera switched successfully';
+                    statusDiv.className = 'absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs';
+
+                    // Update status when new video loads
+                    video.addEventListener('loadedmetadata', () => {
+                        statusDiv.textContent = `${video.videoWidth}x${video.videoHeight} • Ready`;
+                    }, { once: true });
+
+                } catch (error) {
+                    console.error('Camera switch error:', error);
+                    
+                    switchBtn.innerHTML = '❌ Switch Failed';
+                    switchBtn.disabled = true;
+                    statusDiv.textContent = 'Switch failed';
+                    statusDiv.className = 'absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded text-xs';
+                    
+                    alert('❌ Could not switch camera!\n\nPossible reasons:\n• Device has only one camera\n• Camera permissions restricted\n• Hardware limitation\n\nPlease use the current camera or "Upload Photo" option.');
+                }
+            }
+
+            testCameraInModal(modal) {
+                const testBtn = modal.querySelector('#testCameraBtn');
+                testBtn.innerHTML = '🧪 Testing...';
+                testBtn.disabled = true;
+
+                navigator.mediaDevices.enumerateDevices()
+                    .then(devices => {
+                        const videoDevices = devices.filter(device => device.kind === 'videoinput');
+                        
+                        let testResults = [
+                            `📱 Total cameras found: ${videoDevices.length}`,
+                            `🎥 Current camera: ${modal.currentFacingMode === 'user' ? 'Front' : 'Back'} camera`,
+                            `📺 Video resolution: ${modal.querySelector('#cameraVideo').videoWidth}x${modal.querySelector('#cameraVideo').videoHeight}`
+                        ];
+
+                        if (videoDevices.length > 1) {
+                            testResults.push('✅ Multiple cameras available - you can switch cameras');
+                        } else if (videoDevices.length === 1) {
+                            testResults.push('⚠️ Only one camera available - switching may not work');
+                        } else {
+                            testResults.push('❌ No cameras detected');
+                        }
+
+                        alert(`CAMERA TEST RESULTS:\n\n${testResults.join('\n')}\n\n💡 If you need a different camera angle, try the switch button or use "Upload Photo".`);
+                        
+                        testBtn.innerHTML = '🧪 Test Camera';
+                        testBtn.disabled = false;
+                    })
+                    .catch(error => {
+                        alert('❌ Could not test camera devices.\n\nCamera is working but device enumeration failed.');
+                        testBtn.innerHTML = '🧪 Test Camera';
+                        testBtn.disabled = false;
+                    });
+            }
+
+            capturePhotoFromVideo(video, canvas, type) {
+                console.log(`🔥 CAPTURING ${type.toUpperCase()} PHOTO NOW!`);
+                
+                try {
+                    const context = canvas.getContext('2d');
+                    
+                    // Force canvas dimensions
+                    canvas.width = video.videoWidth || 640;
+                    canvas.height = video.videoHeight || 480;
+                    
+                    console.log(`Canvas set to: ${canvas.width}x${canvas.height}`);
+                    
+                    // FORCE draw the video frame
+                    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                    
+                    // Get the image data immediately
+                    let dataUrl;
+                    try {
+                        dataUrl = canvas.toDataURL('image/jpeg', 0.8);
+                    } catch (e) {
+                        dataUrl = canvas.toDataURL('image/png');
+                    }
+                    
+                    console.log(`✅ ${type} photo captured! Data length: ${dataUrl.length}`);
+                    
+                    // IMMEDIATELY set the photo
+                    this.setPhotoPreview(type, dataUrl);
+                    
+                    // Store the photo data
+                    if (type === 'selfie') {
+                        window.capturedSelfie = dataUrl;
+                    } else {
+                        window.capturedShopPhoto = dataUrl;
+                    }
+                    
+                    alert(`✅ ${type === 'selfie' ? 'SELFIE' : 'SHOP PHOTO'} CAPTURED SUCCESSFULLY!`);
+                    
+                } catch (error) {
+                    console.error('❌ CAPTURE ERROR:', error);
+                    alert(`❌ CAPTURE FAILED: ${error.message}`);
+                }
+            }
+
+            closeCameraModal(modal, stream) {
+                // Stop camera stream
+                stream.getTracks().forEach(track => track.stop());
+                
+                // Remove modal
+                document.body.removeChild(modal);
+            }
+
+            uploadPhoto(type) {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = 'image/*';
+                
+                input.onchange = (e) => {
+                    const file = e.target.files[0];
+                    if (!file) return;
+
+                    // Check file size (limit to 5MB)
+                    if (file.size > 5 * 1024 * 1024) {
+                        alert('❌ File too large!\n\nPlease select an image smaller than 5MB.');
+                        return;
+                    }
+
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        // Compress the image
+                        this.compressImage(e.target.result, (compressedDataUrl) => {
+                            this.setPhotoPreview(type, compressedDataUrl);
+                        });
+                    };
+                    reader.readAsDataURL(file);
+                };
+                
+                input.click();
+            }
+
+            compressImage(dataUrl, callback) {
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    
+                    // Calculate new dimensions (max 800px width/height)
+                    let { width, height } = img;
+                    const maxSize = 800;
+                    
+                    if (width > height) {
+                        if (width > maxSize) {
+                            height = (height * maxSize) / width;
+                            width = maxSize;
+                        }
+                    } else {
+                        if (height > maxSize) {
+                            width = (width * maxSize) / height;
+                            height = maxSize;
+                        }
+                    }
+                    
+                    canvas.width = width;
+                    canvas.height = height;
+                    
+                    ctx.drawImage(img, 0, 0, width, height);
+                    
+                    // Compress to JPEG with 70% quality
+                    const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.7);
+                    callback(compressedDataUrl);
+                };
+                img.src = dataUrl;
+            }
+
+            setPhotoPreview(type, dataUrl) {
+                console.log(`📸 SETTING ${type.toUpperCase()} PREVIEW`);
+                
+                const previewDiv = document.getElementById(`${type}Preview`);
+                const imageElement = document.getElementById(`${type}Image`);
+                const statusDiv = document.getElementById(`${type}Status`);
+                
+                if (!previewDiv || !imageElement || !statusDiv) {
+                    console.error(`❌ Missing elements for ${type} preview`);
+                    return;
+                }
+                
+                // FORCE set the image
+                imageElement.src = dataUrl;
+                imageElement.style.display = 'block';
+                
+                // FORCE show the preview
+                previewDiv.classList.remove('hidden');
+                previewDiv.style.display = 'block';
+                
+                // Update status
+                statusDiv.textContent = `✅ ${type === 'selfie' ? 'Selfie' : 'Shop photo'} captured successfully!`;
+                statusDiv.className = 'text-sm text-green-600';
+                
+                console.log(`✅ ${type.toUpperCase()} PREVIEW SET SUCCESSFULLY`);
+            }
+
+            retakePhoto(type) {
+                console.log(`🔄 RETAKING ${type.toUpperCase()} PHOTO`);
+                this.clearPhotoPreview(type);
+                
+                // Clear stored photo data
+                if (type === 'selfie') {
+                    window.capturedSelfie = null;
+                } else {
+                    window.capturedShopPhoto = null;
+                }
+                
+                // Immediately open camera for retake
+                this.takePhoto(type);
+            }
+
+            clearPhotoPreview(type) {
+                console.log(`🧹 CLEARING ${type.toUpperCase()} PREVIEW`);
+                
+                const previewDiv = document.getElementById(`${type}Preview`);
+                const imageElement = document.getElementById(`${type}Image`);
+                const statusDiv = document.getElementById(`${type}Status`);
+                
+                if (imageElement) {
+                    imageElement.src = '';
+                    imageElement.removeAttribute('src');
+                }
+                
+                if (previewDiv) {
+                    previewDiv.classList.add('hidden');
+                }
+                
+                if (statusDiv) {
+                    statusDiv.textContent = `No ${type === 'selfie' ? 'selfie' : 'shop photo'} captured yet`;
+                    statusDiv.className = 'text-sm text-gray-600';
+                }
+                
+                // Clear stored data
+                if (type === 'selfie') {
+                    window.capturedSelfie = null;
+                } else {
+                    window.capturedShopPhoto = null;
+                }
+            }
+
+            viewPhoto(photoDataUrl, title) {
+                // Create photo viewer modal
+                const modal = document.createElement('div');
+                modal.className = 'fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4';
+                modal.innerHTML = `
+                    <div class="bg-white rounded-xl p-4 max-w-2xl w-full max-h-full overflow-auto">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-bold text-gray-800">${title}</h3>
+                            <button id="closePhotoModal" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+                        </div>
+                        <img src="${photoDataUrl}" class="w-full rounded-lg" alt="${title}">
+                        <div class="mt-4 flex gap-3">
+                            <button id="downloadPhoto" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+                                💾 Download Photo
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                document.body.appendChild(modal);
+
+                // Close modal handlers
+                modal.querySelector('#closePhotoModal').addEventListener('click', () => {
+                    document.body.removeChild(modal);
+                });
+
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        document.body.removeChild(modal);
+                    }
+                });
+
+                // Download photo handler
+                modal.querySelector('#downloadPhoto').addEventListener('click', () => {
+                    const link = document.createElement('a');
+                    link.href = photoDataUrl;
+                    link.download = `${title.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.jpg`;
+                    link.click();
+                });
+            }
+
+            switchTab(tab) {
+                // Hide all sections
+                document.getElementById('setupSection').classList.add('hidden');
+                document.getElementById('addVisitSection').classList.add('hidden');
+                document.getElementById('viewDataSection').classList.add('hidden');
+                document.getElementById('adminSection').classList.add('hidden');
+
+                // Remove active class from all tabs
+                document.querySelectorAll('[id$="Tab"]').forEach(btn => {
+                    btn.classList.remove('bg-white/30');
+                    btn.classList.add('hover:bg-white/20');
+                });
+
+                // Show selected section and activate tab
+                if (tab === 'setup') {
+                    document.getElementById('setupSection').classList.remove('hidden');
+                    document.getElementById('setupTab').classList.add('bg-white/30');
+                    document.getElementById('setupTab').classList.remove('hover:bg-white/20');
+                } else if (tab === 'addVisit') {
+                    document.getElementById('addVisitSection').classList.remove('hidden');
+                    document.getElementById('addVisitTab').classList.add('bg-white/30');
+                    document.getElementById('addVisitTab').classList.remove('hover:bg-white/20');
+                } else if (tab === 'viewData') {
+                    document.getElementById('viewDataSection').classList.remove('hidden');
+                    document.getElementById('viewDataTab').classList.add('bg-white/30');
+                    document.getElementById('viewDataTab').classList.remove('hover:bg-white/20');
+                    this.updateVisitTable();
+                    this.updateFilters();
+                } else if (tab === 'admin') {
+                    document.getElementById('adminSection').classList.remove('hidden');
+                    document.getElementById('adminTab').classList.add('bg-white/30');
+                    document.getElementById('adminTab').classList.remove('hover:bg-white/20');
+                    this.updateAdminDashboard();
+                }
+
+                this.currentTab = tab;
+            }
+
+            handleFormSubmit(e) {
+                e.preventDefault();
+                
+                console.log('🚀 FORM SUBMIT - CHECKING PHOTOS...');
+                
+                // Check if photos are captured using multiple methods
+                const selfieImage = document.getElementById('selfieImage');
+                const shopPhotoImage = document.getElementById('shopPhotoImage');
+                
+                const hasSelfie = selfieImage && selfieImage.src && selfieImage.src.length > 100;
+                const hasShopPhoto = shopPhotoImage && shopPhotoImage.src && shopPhotoImage.src.length > 100;
+                
+                // Also check stored data
+                const storedSelfie = window.capturedSelfie;
+                const storedShopPhoto = window.capturedShopPhoto;
+                
+                console.log('Photo check:', {
+                    hasSelfie,
+                    hasShopPhoto,
+                    storedSelfie: !!storedSelfie,
+                    storedShopPhoto: !!storedShopPhoto,
+                    selfieLength: selfieImage?.src?.length || 0,
+                    shopPhotoLength: shopPhotoImage?.src?.length || 0
+                });
+                
+                if ((!hasSelfie && !storedSelfie) || (!hasShopPhoto && !storedShopPhoto)) {
+                    alert('❌ BOTH PHOTOS ARE REQUIRED!\n\n📸 Missing:\n' + 
+                          (!hasSelfie && !storedSelfie ? '• Selfie with shop\n' : '') +
+                          (!hasShopPhoto && !storedShopPhoto ? '• Shop photo\n' : '') +
+                          '\n🔥 PLEASE CAPTURE BOTH PHOTOS BEFORE SUBMITTING!');
+                    return;
+                }
+
+                // Use stored photo data or image src
+                const finalSelfiePhoto = storedSelfie || selfieImage.src;
+                const finalShopPhoto = storedShopPhoto || shopPhotoImage.src;
+                
+                console.log('📸 Using photos:', {
+                    selfieLength: finalSelfiePhoto?.length || 0,
+                    shopPhotoLength: finalShopPhoto?.length || 0
+                });
+
+                const formData = {
+                    id: Date.now(),
+                    salesPersonName: document.getElementById('salesPersonName').value,
+                    visitDate: document.getElementById('visitDate').value,
+                    shopName: document.getElementById('shopName').value,
+                    shopType: document.getElementById('shopType').value,
+                    shopOwner: document.getElementById('shopOwner').value,
+                    contactNumber: document.getElementById('contactNumber').value,
+                    visitTime: document.getElementById('visitTime').value,
+                    shopAddress: document.getElementById('shopAddress').value,
+                    currentLocation: document.getElementById('currentLocation').value,
+                    productsDiscussed: document.getElementById('productsDiscussed').value,
+                    orderAmount: parseFloat(document.getElementById('orderAmount').value) || 0,
+                    visitNotes: document.getElementById('visitNotes').value,
+                    followupDate: document.getElementById('followupDate').value,
+                    selfiePhoto: finalSelfiePhoto,
+                    shopPhoto: finalShopPhoto,
+                    timestamp: new Date().toISOString()
+                };
+
+                this.visits.push(formData);
+                this.saveToStorage();
+                this.showSuccessMessage();
+                this.resetForm();
+                this.updateDisplay();
+                
+                // Trigger immediate sync when new visit is added
+                if (this.teamId) {
+                    this.syncData();
+                }
+            }
+
+            saveToStorage() {
+                localStorage.setItem('salesVisits', JSON.stringify(this.visits));
+            }
+
+            showSuccessMessage() {
+                const message = document.getElementById('successMessage');
+                message.classList.remove('translate-x-full');
+                setTimeout(() => {
+                    message.classList.add('translate-x-full');
+                }, 3000);
+            }
+
+            resetForm() {
+                console.log('🔄 RESETTING FORM AND CLEARING ALL PHOTOS');
+                
+                document.getElementById('visitForm').reset();
+                this.setCurrentDate();
+                this.setCurrentTime();
+                
+                // Clear photo previews
+                this.clearPhotoPreview('selfie');
+                this.clearPhotoPreview('shop');
+                
+                // Clear stored photo data
+                window.capturedSelfie = null;
+                window.capturedShopPhoto = null;
+                
+                console.log('✅ FORM RESET COMPLETE - ALL PHOTOS CLEARED');
+            }
+
+            updateDisplay() {
+                if (this.currentTab === 'viewData') {
+                    this.updateVisitTable();
+                    this.updateFilters();
+                } else if (this.currentTab === 'admin') {
+                    this.updateAdminDashboard();
+                }
+            }
+
+            updateFilters() {
+                const salesPersonFilter = document.getElementById('filterSalesPerson');
+                const uniqueSalesPersons = [...new Set(this.visits.map(visit => visit.salesPersonName))];
+                
+                salesPersonFilter.innerHTML = '<option value="">All Sales Persons</option>';
+                uniqueSalesPersons.forEach(person => {
+                    const option = document.createElement('option');
+                    option.value = person;
+                    option.textContent = person;
+                    salesPersonFilter.appendChild(option);
+                });
+            }
+
+            updateVisitTable() {
+                const tbody = document.getElementById('visitTableBody');
+                const noDataMessage = document.getElementById('noDataMessage');
+                const salesPersonFilter = document.getElementById('filterSalesPerson').value;
+                const dateFilter = document.getElementById('filterDate').value;
+
+                let filteredVisits = this.visits;
+
+                if (salesPersonFilter) {
+                    filteredVisits = filteredVisits.filter(visit => visit.salesPersonName === salesPersonFilter);
+                }
+
+                if (dateFilter) {
+                    filteredVisits = filteredVisits.filter(visit => visit.visitDate === dateFilter);
+                }
+
+                if (filteredVisits.length === 0) {
+                    tbody.innerHTML = '';
+                    noDataMessage.classList.remove('hidden');
+                    return;
+                }
+
+                noDataMessage.classList.add('hidden');
+                tbody.innerHTML = filteredVisits.map(visit => `
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3">${visit.visitDate}</td>
+                        <td class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 font-medium">${visit.salesPersonName}</td>
+                        <td class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3">${visit.shopName}</td>
+                        <td class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 hidden sm:table-cell">${visit.shopType || 'Not specified'}</td>
+                        <td class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 hidden md:table-cell">${visit.shopOwner}</td>
+                        <td class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 hidden lg:table-cell">${visit.contactNumber}</td>
+                        <td class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 hidden sm:table-cell">${visit.visitTime}</td>
+                        <td class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3">₹${visit.orderAmount.toLocaleString()}</td>
+                        <td class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 hidden lg:table-cell">
+                            ${visit.selfiePhoto ? `<button onclick="window.tracker.viewPhoto('${visit.selfiePhoto}', 'Selfie with Shop')" class="bg-green-500 text-white px-2 py-1 rounded text-xs hover:bg-green-600 transition-colors">🤳 View Selfie</button>` : '<span class="text-gray-400 text-xs">No selfie</span>'}
+                        </td>
+                        <td class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3">
+                            <button onclick="window.tracker.viewVisitDetails(${visit.id})" 
+                                    class="bg-blue-500 text-white px-2 sm:px-3 py-1 rounded text-xs sm:text-sm hover:bg-blue-600 transition-colors">
+                                View Details
+                            </button>
+                        </td>
+                    </tr>
+                `).join('');
+            }
+
+            updateAdminDashboard() {
+                // Update statistics
+                document.getElementById('totalVisits').textContent = this.visits.length;
+                
+                const uniqueSalesPersons = new Set(this.visits.map(visit => visit.salesPersonName));
+                document.getElementById('activeSalesPersons').textContent = uniqueSalesPersons.size;
+                
+                const totalOrders = this.visits.reduce((sum, visit) => sum + visit.orderAmount, 0);
+                document.getElementById('totalOrders').textContent = totalOrders.toLocaleString();
+
+                // Update performance table
+                this.updatePerformanceTable();
+            }
+
+            updatePerformanceTable() {
+                const tbody = document.getElementById('performanceTableBody');
+                const salesPersonStats = {};
+
+                this.visits.forEach(visit => {
+                    if (!salesPersonStats[visit.salesPersonName]) {
+                        salesPersonStats[visit.salesPersonName] = {
+                            totalVisits: 0,
+                            totalOrders: 0,
+                            lastVisit: visit.visitDate
+                        };
+                    }
+                    
+                    salesPersonStats[visit.salesPersonName].totalVisits++;
+                    salesPersonStats[visit.salesPersonName].totalOrders += visit.orderAmount;
+                    
+                    if (visit.visitDate > salesPersonStats[visit.salesPersonName].lastVisit) {
+                        salesPersonStats[visit.salesPersonName].lastVisit = visit.visitDate;
+                    }
+                });
+
+                tbody.innerHTML = Object.entries(salesPersonStats).map(([name, stats]) => `
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 font-medium">${name}</td>
+                        <td class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3">${stats.totalVisits}</td>
+                        <td class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3">₹${stats.totalOrders.toLocaleString()}</td>
+                        <td class="border border-gray-300 px-2 sm:px-4 py-2 sm:py-3 hidden sm:table-cell">${stats.lastVisit}</td>
+                    </tr>
+                `).join('');
+            }
+
+            downloadAllData() {
+                if (this.visits.length === 0) {
+                    alert('No data to download!');
+                    return;
+                }
+
+                const worksheet = XLSX.utils.json_to_sheet(this.visits.map(visit => ({
+                    'Sales Person': visit.salesPersonName,
+                    'Visit Date': visit.visitDate,
+                    'Visit Time': visit.visitTime,
+                    'Shop Name': visit.shopName,
+                    'Shop Type': visit.shopType || 'Not specified',
+                    'Shop Owner': visit.shopOwner,
+                    'Contact Number': visit.contactNumber,
+                    'Shop Address': visit.shopAddress,
+                    'GPS Location': visit.currentLocation || 'Not captured',
+                    'Products Discussed': visit.productsDiscussed,
+                    'Order Amount (₹)': visit.orderAmount,
+                    'Visit Notes': visit.visitNotes,
+                    'Follow-up Date': visit.followupDate,
+                    'Selfie Photo': visit.selfiePhoto ? 'Available' : 'Not captured',
+                    'Record Created': new Date(visit.timestamp).toLocaleString()
+                })));
+
+                const workbook = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(workbook, worksheet, 'All Visits');
+
+                const fileName = `Sales_Visits_All_${new Date().toISOString().split('T')[0]}.xlsx`;
+                XLSX.writeFile(workbook, fileName);
+            }
+
+            showDownloadModal(type) {
+                const modal = document.getElementById('downloadModal');
+                const content = document.getElementById('downloadContent');
+                
+                if (type === 'person') {
+                    const uniqueSalesPersons = [...new Set(this.visits.map(visit => visit.salesPersonName))];
+                    content.innerHTML = `
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Select Sales Person:</label>
+                        <select id="downloadPersonSelect" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                            ${uniqueSalesPersons.map(person => `<option value="${person}">${person}</option>`).join('')}
+                        </select>
+                    `;
+                } else if (type === 'date') {
+                    content.innerHTML = `
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">From Date:</label>
+                                <input type="date" id="downloadFromDate" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">To Date:</label>
+                                <input type="date" id="downloadToDate" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                            </div>
+                        </div>
+                    `;
+                }
+
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                this.downloadType = type;
+            }
+
+            hideDownloadModal() {
+                const modal = document.getElementById('downloadModal');
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+
+            confirmDownload() {
+                if (this.downloadType === 'person') {
+                    const selectedPerson = document.getElementById('downloadPersonSelect').value;
+                    const filteredVisits = this.visits.filter(visit => visit.salesPersonName === selectedPerson);
+                    this.downloadFilteredData(filteredVisits, `Sales_Visits_${selectedPerson.replace(/\s+/g, '_')}`);
+                } else if (this.downloadType === 'date') {
+                    const fromDate = document.getElementById('downloadFromDate').value;
+                    const toDate = document.getElementById('downloadToDate').value;
+                    
+                    if (!fromDate || !toDate) {
+                        alert('Please select both from and to dates!');
+                        return;
+                    }
+
+                    const filteredVisits = this.visits.filter(visit => 
+                        visit.visitDate >= fromDate && visit.visitDate <= toDate
+                    );
+                    this.downloadFilteredData(filteredVisits, `Sales_Visits_${fromDate}_to_${toDate}`);
+                }
+
+                this.hideDownloadModal();
+            }
+
+            downloadFilteredData(data, fileName) {
+                if (data.length === 0) {
+                    alert('No data found for the selected criteria!');
+                    return;
+                }
+
+                const worksheet = XLSX.utils.json_to_sheet(data.map(visit => ({
+                    'Sales Person': visit.salesPersonName,
+                    'Visit Date': visit.visitDate,
+                    'Visit Time': visit.visitTime,
+                    'Shop Name': visit.shopName,
+                    'Shop Type': visit.shopType || 'Not specified',
+                    'Shop Owner': visit.shopOwner,
+                    'Contact Number': visit.contactNumber,
+                    'Shop Address': visit.shopAddress,
+                    'GPS Location': visit.currentLocation || 'Not captured',
+                    'Products Discussed': visit.productsDiscussed,
+                    'Order Amount (₹)': visit.orderAmount,
+                    'Visit Notes': visit.visitNotes,
+                    'Follow-up Date': visit.followupDate,
+                    'Selfie Photo': visit.selfiePhoto ? 'Available' : 'Not captured',
+                    'Record Created': new Date(visit.timestamp).toLocaleString()
+                })));
+
+                const workbook = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(workbook, worksheet, 'Filtered Visits');
+
+                XLSX.writeFile(workbook, `${fileName}_${new Date().toISOString().split('T')[0]}.xlsx`);
+            }
+
+            clearAllData() {
+                if (confirm('Are you sure you want to delete all visit records? This action cannot be undone!')) {
+                    this.visits = [];
+                    this.saveToStorage();
+                    this.updateDisplay();
+                    alert('All data has been cleared successfully!');
+                }
+            }
+
+            installPWA() {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    deferredPrompt.userChoice.then((choiceResult) => {
+                        if (choiceResult.outcome === 'accepted') {
+                            console.log('User accepted the install prompt');
+                            document.getElementById('installPrompt').classList.add('hidden');
+                        } else {
+                            console.log('User dismissed the install prompt');
+                        }
+                        deferredPrompt = null;
+                    });
+                } else {
+                    // Fallback for browsers that don't support install prompt
+                    alert('📱 To install this app:\n\n🔹 Chrome/Edge: Click menu (⋮) → "Install app" or "Add to Home screen"\n🔹 Safari: Click share (📤) → "Add to Home Screen"\n🔹 Firefox: Click menu (☰) → "Install"\n\nOnce installed, the app will work offline and feel like a native mobile app!');
+                }
+            }
+
+            createBackup() {
+                const backupData = {
+                    visits: this.visits,
+                    teamId: this.teamId,
+                    backupDate: new Date().toISOString(),
+                    version: '1.0'
+                };
+
+                const dataStr = JSON.stringify(backupData, null, 2);
+                const dataBlob = new Blob([dataStr], {type: 'application/json'});
+                
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(dataBlob);
+                link.download = `SalesTracker_Backup_${new Date().toISOString().split('T')[0]}.json`;
+                link.click();
+
+                // Update backup status
+                const lastBackupTime = new Date().toISOString();
+                localStorage.setItem('lastBackupTime', lastBackupTime);
+                this.updateBackupStatus();
+
+                alert('✅ Backup created successfully!\n\nThe backup file has been downloaded to your device. Keep it safe!');
+            }
+
+            restoreBackup() {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = '.json';
+                
+                input.onchange = (e) => {
+                    const file = e.target.files[0];
+                    if (!file) return;
+
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        try {
+                            const backupData = JSON.parse(e.target.result);
+                            
+                            if (!backupData.visits || !Array.isArray(backupData.visits)) {
+                                throw new Error('Invalid backup file format');
+                            }
+
+                            if (confirm(`⚠️ RESTORE BACKUP?\n\nThis will replace ALL current data with backup from:\n${new Date(backupData.backupDate).toLocaleString()}\n\nBackup contains: ${backupData.visits.length} visits\nCurrent data: ${this.visits.length} visits\n\nContinue?`)) {
+                                this.visits = backupData.visits;
+                                if (backupData.teamId) {
+                                    this.teamId = backupData.teamId;
+                                    localStorage.setItem('teamId', this.teamId);
+                                }
+                                
+                                this.saveToStorage();
+                                this.updateDisplay();
+                                this.initializeTeamSetup();
+                                
+                                alert(`✅ Backup restored successfully!\n\nRestored ${backupData.visits.length} visits from ${new Date(backupData.backupDate).toLocaleString()}`);
+                            }
+                        } catch (error) {
+                            alert('❌ Error restoring backup!\n\nThe file appears to be corrupted or invalid. Please check the file and try again.');
+                        }
+                    };
+                    reader.readAsText(file);
+                };
+                
+                input.click();
+            }
+
+            toggleAutoBackup() {
+                const isEnabled = localStorage.getItem('autoBackupEnabled') === 'true';
+                const newState = !isEnabled;
+                
+                localStorage.setItem('autoBackupEnabled', newState.toString());
+                
+                const button = document.getElementById('autoBackupToggle');
+                if (newState) {
+                    button.textContent = '🔄 Auto Backup: ON';
+                    button.classList.remove('bg-purple-600', 'hover:bg-purple-700');
+                    button.classList.add('bg-green-600', 'hover:bg-green-700');
+                    this.startAutoBackup();
+                    alert('✅ Auto Backup ENABLED!\n\nYour data will be automatically backed up every 24 hours.');
+                } else {
+                    button.textContent = '🔄 Auto Backup: OFF';
+                    button.classList.remove('bg-green-600', 'hover:bg-green-700');
+                    button.classList.add('bg-purple-600', 'hover:bg-purple-700');
+                    this.stopAutoBackup();
+                    alert('⚠️ Auto Backup DISABLED!\n\nRemember to create manual backups regularly.');
+                }
+                
+                this.updateBackupStatus();
+            }
+
+            startAutoBackup() {
+                // Check if auto backup should run (every 24 hours)
+                const lastAutoBackup = localStorage.getItem('lastAutoBackup');
+                const now = Date.now();
+                const twentyFourHours = 24 * 60 * 60 * 1000;
+                
+                if (!lastAutoBackup || (now - parseInt(lastAutoBackup)) > twentyFourHours) {
+                    // Create automatic backup
+                    setTimeout(() => {
+                        if (localStorage.getItem('autoBackupEnabled') === 'true') {
+                            this.createAutoBackup();
+                        }
+                    }, 5000); // Wait 5 seconds after app load
+                }
+                
+                // Set up daily check
+                setInterval(() => {
+                    if (localStorage.getItem('autoBackupEnabled') === 'true') {
+                        const lastAutoBackup = localStorage.getItem('lastAutoBackup');
+                        const now = Date.now();
+                        
+                        if (!lastAutoBackup || (now - parseInt(lastAutoBackup)) > twentyFourHours) {
+                            this.createAutoBackup();
+                        }
+                    }
+                }, 60 * 60 * 1000); // Check every hour
+            }
+
+            createAutoBackup() {
+                const backupData = {
+                    visits: this.visits,
+                    teamId: this.teamId,
+                    backupDate: new Date().toISOString(),
+                    version: '1.0',
+                    autoBackup: true
+                };
+
+                // Store in localStorage as emergency backup
+                localStorage.setItem('emergencyBackup', JSON.stringify(backupData));
+                localStorage.setItem('lastAutoBackup', Date.now().toString());
+                
+                this.updateBackupStatus();
+            }
+
+            stopAutoBackup() {
+                // Auto backup is controlled by the toggle, no additional cleanup needed
+            }
+
+            emailBackup() {
+                if (this.visits.length === 0) {
+                    alert('❌ No data to backup!\n\nAdd some visit records first.');
+                    return;
+                }
+
+                const backupData = {
+                    visits: this.visits,
+                    teamId: this.teamId,
+                    backupDate: new Date().toISOString(),
+                    version: '1.0'
+                };
+
+                const dataStr = JSON.stringify(backupData, null, 2);
+                const subject = `Sales Tracker Backup - ${new Date().toLocaleDateString()}`;
+                const body = `Sales Visit Tracker Backup
+                
+Backup Date: ${new Date().toLocaleString()}
+Total Visits: ${this.visits.length}
+Team ID: ${this.teamId || 'Not configured'}
+
+IMPORTANT: Save the attached backup file safely!
+
+To restore this backup:
+1. Open Sales Visit Tracker
+2. Go to Admin Panel
+3. Click "Restore Backup"
+4. Select this backup file
+
+Backup Data:
+${dataStr}`;
+
+                const mailtoLink = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                
+                // Try to open email client
+                window.location.href = mailtoLink;
+                
+                alert('📧 Email backup prepared!\n\nYour email client should open with the backup data. Send this email to yourself or save it safely.');
+            }
+
+            updateBackupStatus() {
+                const statusDiv = document.getElementById('backupStatus');
+                const lastBackupDiv = document.getElementById('lastBackupTime');
+                const autoBackupButton = document.getElementById('autoBackupToggle');
+                
+                const lastBackupTime = localStorage.getItem('lastBackupTime');
+                const lastAutoBackup = localStorage.getItem('lastAutoBackup');
+                const autoBackupEnabled = localStorage.getItem('autoBackupEnabled') === 'true';
+                const emergencyBackup = localStorage.getItem('emergencyBackup');
+                
+                // Update auto backup button
+                if (autoBackupEnabled) {
+                    autoBackupButton.textContent = '🔄 Auto Backup: ON';
+                    autoBackupButton.classList.remove('bg-purple-600', 'hover:bg-purple-700');
+                    autoBackupButton.classList.add('bg-green-600', 'hover:bg-green-700');
+                } else {
+                    autoBackupButton.textContent = '🔄 Auto Backup: OFF';
+                    autoBackupButton.classList.remove('bg-green-600', 'hover:bg-green-700');
+                    autoBackupButton.classList.add('bg-purple-600', 'hover:bg-purple-700');
+                }
+                
+                // Update status
+                let status = '';
+                if (emergencyBackup) {
+                    status += '✅ Emergency backup stored locally. ';
+                }
+                if (lastBackupTime) {
+                    status += '✅ Manual backup created. ';
+                }
+                if (autoBackupEnabled) {
+                    status += '🔄 Auto backup enabled.';
+                } else {
+                    status += '⚠️ Auto backup disabled.';
+                }
+                
+                if (!lastBackupTime && !emergencyBackup) {
+                    status = '⚠️ No backups created yet. Your data could be lost!';
+                }
+                
+                statusDiv.textContent = status;
+                
+                // Update last backup time
+                if (lastBackupTime) {
+                    lastBackupDiv.textContent = `Last manual backup: ${new Date(lastBackupTime).toLocaleString()}`;
+                } else if (lastAutoBackup) {
+                    lastBackupDiv.textContent = `Last auto backup: ${new Date(parseInt(lastAutoBackup)).toLocaleString()}`;
+                } else {
+                    lastBackupDiv.textContent = 'Last backup: Never';
+                }
+            }
+
+            viewVisitDetails(visitId) {
+                const visit = this.visits.find(v => v.id === visitId);
+                if (!visit) {
+                    alert('Visit details not found!');
+                    return;
+                }
+
+                const details = `VISIT DETAILS
+                
+Sales Person: ${visit.salesPersonName}
+Visit Date: ${visit.visitDate} at ${visit.visitTime}
+
+SHOP INFORMATION:
+Name: ${visit.shopName}
+Type: ${visit.shopType || 'Not specified'}
+Owner: ${visit.shopOwner}
+Contact: ${visit.contactNumber}
+Address: ${visit.shopAddress}
+Location: ${visit.currentLocation || 'Not captured'}
+
+BUSINESS DETAILS:
+Products Discussed: ${visit.productsDiscussed || 'Not specified'}
+Order Amount: ₹${visit.orderAmount.toLocaleString()}
+
+PHOTO:
+Selfie with Shop: ${visit.selfiePhoto ? 'Available ✅' : 'Not captured ❌'}
+
+NOTES: ${visit.visitNotes || 'No notes added'}
+Follow-up Date: ${visit.followupDate || 'Not scheduled'}
+
+Record Created: ${new Date(visit.timestamp).toLocaleString()}`;
+
+                alert(details);
+            }
+        }
+
+        // Initialize the application
+        const tracker = new SalesVisitTracker();
+        
+        // Make tracker globally accessible for onclick handlers
+        window.tracker = tracker;
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96df4c1df6d928cd',t:'MTc1NDk5NDYyNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
